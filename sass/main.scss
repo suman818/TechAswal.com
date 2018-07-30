@@ -42,7 +42,7 @@ body {
 	color: $color-grey-dark;
 	padding: 30px; 
 }
-/*-------------------Header Settings------------------------*/
+/*--------------------------------------------------------------Header Settings-------------------------------------------------------*/
 .header {
 	height: 95vh;
 	background-image: linear-gradient(to right bottom, 
@@ -240,6 +240,10 @@ $color-grey-light-1: #f7f7f7;
 
 	&:not(:last-child){
 		margin-bottom: $gutter-vertical;
+
+	}
+	.col-1 {
+		margin-right: 5rem;
 	}
 }
 
@@ -263,7 +267,7 @@ $color-grey-light-1: #f7f7f7;
 }
 
 .u-margin-bottom-big {
-
+	margin-bottom: 8rem !important;
 }
 
 .btn-text {
@@ -288,5 +292,43 @@ $color-grey-light-1: #f7f7f7;
 	&:active{
 		box-shadow: 0 .5rem 1rem rgba($color-black, .15);
 		transform: translateY(0);
+	}
+}
+
+.composition {
+	position: relative;
+
+	&__photo {
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+		 border-radius: 2px;
+		 position: absolute;
+		 z-index: 10;
+		 transition: all .2s;
+		 outline-offset: 1rem;
+
+		 &--p1 {
+		 	left: 0;
+		 	top: -2rem;
+		 }
+		 &--p2 {
+		 	right: 0;
+		 	top: 2rem;
+		 }
+		 &--p3 {
+		 	left: 20%;
+		 	top: 10rem;
+		 }
+
+		 &:hover{
+		 	outline: 1.1rem solid $color-primary;
+		 	transform: scale(1.05) translateY(-.5px);
+			box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+			z-index: 20;
+		 }
+	}
+
+	&:hover &__photo:not(:hover) {
+		transform: scale(.95);
 	}
 }
