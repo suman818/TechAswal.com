@@ -197,7 +197,10 @@ body {
 	}
 }
 
-/*-------------------MIAN SECTION-ABOUT------------------------*/
+
+/*------------------------------------------------------------MIAN SECTION-ABOUT----------------------------------------------------------------*/
+
+
 $color-grey-light-1: #f7f7f7;
 .section-about {
 	background-color: $color-grey-light-1;
@@ -242,7 +245,7 @@ $color-grey-light-1: #f7f7f7;
 		margin-bottom: $gutter-vertical;
 
 	}
-	.col-1 {
+	.col-1-of-2 {
 		margin-right: 5rem;
 	}
 }
@@ -330,5 +333,59 @@ $color-grey-light-1: #f7f7f7;
 
 	&:hover &__photo:not(:hover) {
 		transform: scale(.95);
+	}
+}
+
+
+/*-------------------------------------------------------------Feature Section----------------------------------------------------------------------*/
+
+.feature-row {
+	max-width: $grid-width;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin-top: 2rem;
+	grid-column-gap: 3rem;
+	
+}
+
+.section-features {
+	padding: 15rem 0;
+	background-image: linear-gradient(to right bottom, 
+		rgba($color-primary-light,0.8), 
+		rgba($color-primary-dark,0.8)),
+		url(../img/nat-4.jpg);
+		background-size: cover;
+		transform: skewY(-7deg);
+		margin-top: -10rem;
+		& > * {
+			transform: skewY(7deg);
+		}
+}
+
+.feature-box {
+	background-color: rgba($color-white, .8);
+	text-align: center;
+	font-size: 1rem;
+	padding: 1.5rem;
+	border-radius: 3px;
+	box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+	transition: transform .3s;
+
+
+	&__icon {
+		font-size: 4rem;
+		margin-bottom: .4rem;
+		background-image:linear-gradient(to right, $color-primary-light, $color-primary-dark);
+		display: inline-block;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+	&:hover{
+		transform: translateY(-1.2rem) scale(1.03);
+	}
+
+	&__text {
+
 	}
 }
